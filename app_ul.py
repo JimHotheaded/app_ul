@@ -28,8 +28,8 @@ class Window():
         self.button2 = tk.Button(self.rightframeheader, text='Clear',  command=self.clear, width=10)
         self.button2.pack(padx = (10, 0), pady = (0, 5), side = tk.LEFT)  
  
-        # self.button3 = tk.Button(self.rightframeheader, text='Generate Plot',  command=self.generatePlot, width=10)
-        # self.button3.pack(pady = (0, 5), padx = (10, 0), side = tk.LEFT)  
+        self.button3 = tk.Button(self.rightframeheader, text='Generate Plot',  command=self.generatePlot, width=10)
+        self.button3.pack(pady = (0, 5), padx = (10, 0), side = tk.LEFT)  
    
         self.button4 = tk.Button(self.rightframeheader, text='Export to Excel File',  command=self.export_to_excel, width=20)
         self.button4.pack(padx = (10,0), pady = (0,5), side = tk.LEFT)
@@ -179,7 +179,9 @@ class Window():
             export_df.to_excel(excel_file_path, index=False)
             excel_file_handle.close()
             tk.messagebox.showinfo("Success", f"File '{excel_file_path}' saved successfully!")
-
+    def test(selt):
+        print("test")        
+    
 root = tk.Tk()
 window = Window(root)
 root.mainloop()
