@@ -1,0 +1,8 @@
+matplotlib
+sympy
+pandastable
+pandas
+numpy
+scipy
+pyinstaller
+auto-py-to-exe
