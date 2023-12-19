@@ -168,7 +168,9 @@ class Window():
         if not(self.table.model.df.empty): 
             df = self.table.model.df.copy()
             self.ax.plot(pd.to_numeric(df["x"]), pd.to_numeric(df["y"]), color ='tab:blue', picker=True, pickradius=5)   
-        self.graph.draw_idle()     
+        self.graph.draw_idle()
+        plot_df = self.table.model.df
+        plot_df.plot(figsize=(30, 6))    
     
     def export_to_excel(self):
         export_df = self.table.model.df
