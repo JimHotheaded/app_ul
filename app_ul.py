@@ -178,10 +178,7 @@ class Window():
             excel_file_path = excel_file_handle.name
             export_df.to_excel(excel_file_path, index=False)
             excel_file_handle.close()
-            tk.messagebox.showinfo("Success", f"File '{excel_file_path}' saved successfully!")
-    
-    def test(selt):
-        print("test")        
+            tk.messagebox.showinfo("Success", f"File '{excel_file_path}' saved successfully!")     
     
 root = tk.Tk()
 window = Window(root)
