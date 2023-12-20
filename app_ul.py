@@ -28,8 +28,8 @@ class Window():
         self.button2 = tk.Button(self.rightframeheader, text='Clear',  command=self.clear, width=10)
         self.button2.pack(padx = (10, 0), pady = (0, 5), side = tk.LEFT)  
  
-        self.button3 = tk.Button(self.rightframeheader, text='Generate Plot',  command=self.generatePlot, width=10)
-        self.button3.pack(pady = (0, 5), padx = (10, 0), side = tk.LEFT)  
+        # self.button3 = tk.Button(self.rightframeheader, text='Generate Plot',  command=self.generatePlot, width=10)
+        # self.button3.pack(pady = (0, 5), padx = (10, 0), side = tk.LEFT)  
    
         self.button4 = tk.Button(self.rightframeheader, text='Export to Excel File',  command=self.export_to_excel, width=20)
         self.button4.pack(padx = (10,0), pady = (0,5), side = tk.LEFT)
@@ -45,7 +45,7 @@ class Window():
         self.ax = self.fig.add_subplot(111)
         self.graph = FigureCanvasTkAgg(self.fig, self.canvas)
         self.graph.draw()
-        self.graph.get_tk_widget().pack()
+        # self.graph.get_tk_widget().pack()
         self.canvas.pack(padx=(20, 0))
  
         self.main.pack()
@@ -164,11 +164,11 @@ class Window():
         self.graph.draw_idle()
  
     def generatePlot(self):
-        self.ax.clear()
-        if not(self.table.model.df.empty): 
-            df = self.table.model.df.copy()
-            self.ax.plot(pd.to_numeric(df["x"]), pd.to_numeric(df["y"]), color ='tab:blue', picker=True, pickradius=5)   
-        self.graph.draw_idle()
+        # self.ax.clear()
+        # if not(self.table.model.df.empty): 
+        #     df = self.table.model.df.copy()
+        #     self.ax.plot(pd.to_numeric(df["x"]), pd.to_numeric(df["y"]), color ='tab:blue', picker=True, pickradius=5)   
+        # self.graph.draw_idle()
         plot_df = self.table.model.df
         plot_df.plot(figsize=(30, 6))    
     
